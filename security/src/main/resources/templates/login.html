@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Please login</title>
+</head>
+<body>
+<div>
+<form  name="f"  th:action="@{/login}" method="post">
+    <fieldset>
+    <legend>Please login</legend>
+    <div th:if="${param.error}" class="alert alert-error" style="color:red;">
+    Invalid cedentials
+    </div>
+   <div th:if="${param.logout}" class="alert alert-success">
+    You have been logout.
+    </div>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username"/><br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password"/><br>
+    <div class="form-actions">
+    <button type="submit" class="btn" style="background-color:blue;color:white;">Log in</button>
+    </div>
+     </fieldset>
+</form>
+
+</div>
+
+</body>
+</html>
